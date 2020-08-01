@@ -10,7 +10,7 @@ app.get('/', (req, res) => {
 
 app.get('/results', async (req, res) => {
 	const {search} = req.query;
-	console.log('search:', search);
+	// console.log('search:', search);
 	const result = await axios.get(`http://www.omdbapi.com/?apikey=26cc215e&s=${search}`);
 	// console.log(result.data.Search[0].Title);
 	res.render('results', {data: result.data});
